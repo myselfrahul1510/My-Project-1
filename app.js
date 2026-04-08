@@ -93,7 +93,7 @@ const reviewRouter =  require("./routes/review.js");
 const userRouter =  require("./routes/user.js");
 
 app.get("/", (req, res) => {
-    res.redirect("/listings");
+    res.send("ok");
 });
 
 // Run the Listing and review file
