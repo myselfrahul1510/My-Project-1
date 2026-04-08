@@ -88,13 +88,15 @@ app.use((req,res, next)=>{
 
 
 // Required from Routes Lising and Review files
-const HomeRouter =  require("./routes/home.js");
 const listingRouter =  require("./routes/listing.js");
 const reviewRouter =  require("./routes/review.js");
 const userRouter =  require("./routes/user.js");
 
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
+
 // Run the Listing and review file
-app.use("/", HomeRouter);
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
