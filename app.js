@@ -51,7 +51,7 @@ store.on("error", (err) =>{
 })
 
 const sessionOption = {
-    value : store,          // shudhu store likhle bujte parche naa tai value store korte hobe 
+    store : store,          // shudhu store likhle bujte parche naa tai value store korte hobe 
     secret : process.env.SECRET,
     resave : false,
     saveUninitialized : true,
@@ -85,6 +85,10 @@ app.use((req,res, next)=>{
     res.locals.currUser = req.user;
     next();
 }) 
+
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
 
 // Required from Routes Lising and Review files
 const listingRouter =  require("./routes/listing.js");
