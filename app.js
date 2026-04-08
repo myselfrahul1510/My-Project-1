@@ -88,7 +88,7 @@ app.use((req,res, next)=>{
 
 
 // Required from Routes Lising and Review files
-app.get("/test", (req, res) => {
+app.get("/", (req, res) => {
     res.send("Working!");
 });
 const listingRouter =  require("./routes/listing.js");
