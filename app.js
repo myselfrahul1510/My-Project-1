@@ -51,7 +51,7 @@ store.on("error", (err) =>{
 })
 
 const sessionOption = {
-    store : store,          // shudhu store likhle bujte parche naa tai value store korte hobe 
+    value : store,          // shudhu store likhle bujte parche naa tai value store korte hobe 
     secret : process.env.SECRET,
     resave : false,
     saveUninitialized : true,
