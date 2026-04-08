@@ -7,6 +7,11 @@ const multer = require ('multer')
 const { storage } = require("../cloudConfig.js");
 const upload = multer({ storage })
 
+// https://my-project-1-wanderlust.onrender.com/
+// for running page 
+router.route("https://my-project-1-wanderlust.onrender.com/")
+.get( wrapAsync(listingController.indexListing))
+.post(isLoggedIn,upload.single("listing[Image]"), validateListing, wrapAsync(listingController.createListings));
 
 // Index Route & Create Route
 router.route("/")
