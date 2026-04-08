@@ -96,19 +96,6 @@ app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
-// chatgpt
-app.get("/", (req, res) => {
-    res.redirect("/listings");
-});
-
-app.use("/listings", listingRouter);
-
-// sabar seshe 404 handler
-app.all("*", (req, res, next) => {
-    next(new ExpressError(404, "Page Not Found"));
-});
-//ses
-
 app.use((req, res, next) => {
     next(new ExpressError(404, "Page Not Found!!!"))
 })
