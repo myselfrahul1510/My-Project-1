@@ -93,7 +93,6 @@ const reviewRouter =  require("./routes/review.js");
 const userRouter =  require("./routes/user.js");
 
 // Run the Listing and review file
-app.use("/", listingRouter);
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
