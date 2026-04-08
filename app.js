@@ -92,10 +92,6 @@ const listingRouter =  require("./routes/listing.js");
 const reviewRouter =  require("./routes/review.js");
 const userRouter =  require("./routes/user.js");
 
-app.get("/", (req, res) => {
-    res.send("ok");
-});
-
 // Run the Listing and review file
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
